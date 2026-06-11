@@ -1,190 +1,386 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Mi Estrellita ⭐</title>
+
 <link rel="stylesheet" href="style.css">
+
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
 </head>
+
 <body>
 
+<!-- ESTRELLAS -->
 <div class="stars"></div>
 
-<!-- INTRO -->
+<!-- ESTRELLAS CAYENDO -->
+<div id="star-container"></div>
+
+<!-- GIRASOLES -->
+<div class="sunflower left">🌻</div>
+<div class="sunflower right">🌻</div>
+
+<!-- CONTADOR -->
+<div id="score">
+⭐ Estrellas: <span id="starCount">0</span>
+</div>
+
+<!-- ================= INTRO ================= -->
+
 <section id="intro" class="screen active">
 
-    <h1>⭐ Mi Estrellita ⭐</h1>
+<div class="hero-box">
 
-    <p>
-        Hay personas que pasan por nuestra vida...
-        y otras que dejan una luz imposible de olvidar.
-    </p>
+<h1>⭐ Mi Estrellita ⭐</h1>
 
-    <button onclick="nextStep('carta')">
-        ✨ Comenzar
-    </button>
+<p class="hero-text">
+
+Hay personas que pasan por nuestra vida...
+
+<br><br>
+
+Y otras que dejan una luz imposible de olvidar.
+
+<br><br>
+
+Esta pequeña aventura fue creada especialmente para ti.
+
+🌻✨
+
+</p>
+
+<button onclick="nextStep('carta')">
+✨ Comenzar
+</button>
+
+</div>
 
 </section>
 
-<!-- CARTA -->
+<!-- ================= CARTA ================= -->
+
 <section id="carta" class="screen">
 
-    <div class="card">
+<div class="card">
 
-        <h2>💌 Una carta para ti</h2>
+<h2>💌 Una carta para ti</h2>
 
-        <p>
-            Hola, mi estrellita.
-            <br><br>
-            Quería hacer algo diferente.
-            No un mensaje cualquiera.
-            Sino un pequeño universo donde puedas descubrir
-            todo lo especial que eres para mí.
-        </p>
+<p>
 
-        <button onclick="nextStep('galeria')">
-            Ver recuerdos 📸
-        </button>
+Hola, mi estrellita.
 
-    </div>
+<br><br>
+
+Quería hacer algo diferente.
+
+No un mensaje cualquiera.
+
+<br><br>
+
+Quería crear un pequeño universo donde pudieras descubrir lo especial que eres.
+
+<br><br>
+
+Así que prepárate para una pequeña aventura.
+
+🌻⭐✨
+
+</p>
+
+<button onclick="nextStep('galeria')">
+Ver recuerdos 📸
+</button>
+
+</div>
 
 </section>
 
-<!-- GALERÍA -->
+<!-- ================= GALERÍA ================= -->
+
 <section id="galeria" class="screen">
 
-    <h2>📸 Nuestros recuerdos</h2>
+<h2>📸 Nuestros Recuerdos</h2>
 
-    <div class="gallery">
+<div class="gallery">
 
-        <img src="Foto1.jpg.jpeg">
-        <img src="Foto2.jpg.jpeg">
-        <img src="Foto3.jpg.jpeg">
-        <img src="Foto4.jpg.jpeg">
-        <img src="Foto5.jpg.jpeg">
-        <img src="Foto6.jpg.jpeg">
-        <img src="Foto7.jpg.jpeg">
-        <img src="Foto8.jpg.jpeg">
-    </div>
+<div class="photo-card">
 
-    <button onclick="nextStep('quiz')">
-        Continuar 🎮
-    </button>
+<img src="Foto1.jpg.jpeg">
+
+<p>
+✨ Hay sonrisas bonitas... y luego está la tuya.
+</p>
+
+</div>
+
+<div class="photo-card">
+
+<img src="Foto2.jpg.jpeg">
+
+<p>
+🌻 Algunas personas iluminan un lugar con solo llegar.
+</p>
+
+</div>
+
+<div class="photo-card">
+
+<img src="Foto3.jpg.jpeg">
+
+<p>
+⭐ Un recuerdo sencillo que vale muchísimo.
+</p>
+
+</div>
+
+<div class="photo-card">
+
+<img src="Foto4.jpg.jpeg">
+
+<p>
+💛 Tu alegría siempre encuentra la forma de contagiarse.
+</p>
+
+</div>
+
+<div class="photo-card">
+
+<img src="Foto5.jpg.jpeg">
+
+<p>
+🌙 Incluso los días normales se vuelven especiales contigo.
+</p>
+
+</div>
+
+<div class="photo-card">
+
+<img src="Foto6.jpg.jpeg">
+
+<p>
+🌻 Hay momentos que merecen quedarse para siempre.
+</p>
+
+</div>
+
+<div class="photo-card">
+
+<img src="Foto7.jpg.jpeg">
+
+<p>
+✨ Una foto más, un recuerdo más para guardar.
+</p>
+
+</div>
+
+<div class="photo-card">
+
+<img src="Foto8.jpg.jpeg">
+
+<p>
+⭐ Mi estrellita siendo simplemente ella.
+</p>
+
+</div>
+
+</div>
+
+<button onclick="nextStep('quiz')">
+Continuar 🎮
+</button>
 
 </section>
 
-<!-- QUIZ -->
+<!-- ================= QUIZ ================= -->
+
 <section id="quiz" class="screen">
 
-    <div class="card">
+<div class="card">
 
-        <h2>🎮 Quiz</h2>
+<h2>🎮 Quiz de la Estrellita</h2>
 
-        <p>¿Cómo me gusta llamarte?</p>
+<p>
 
-        <button onclick="wrong()">Leonela</button>
+¿Cómo me gusta llamarte?
 
-        <button onclick="correctQuiz()">
-            Mi Estrellita ⭐
-        </button>
+</p>
 
-        <button onclick="wrong()">Oye tú</button>
+<div class="quiz-buttons">
 
-        <p id="respuesta"></p>
+<button onclick="wrong()">
+Leonela
+</button>
 
-    </div>
+<button onclick="correctQuiz()">
+Mi Estrellita ⭐
+</button>
+
+<button onclick="wrong()">
+Oye tú
+</button>
+
+</div>
+
+<p id="respuesta"></p>
+
+</div>
 
 </section>
 
-<!-- ESTRELLA -->
+<!-- ================= ESTRELLA ================= -->
+
 <section id="estrella" class="screen">
 
-    <h2>🌌 Encuentra tu estrella</h2>
+<h2>🌌 Encuentra tu estrella</h2>
 
-    <p>
-        Una de estas estrellas es especial.
-    </p>
+<p>
 
-    <div class="star-grid">
+Una de estas estrellas es especial.
 
-        <span onclick="wrongStar()">⭐</span>
-        <span onclick="wrongStar()">⭐</span>
-        <span onclick="wrongStar()">⭐</span>
-        <span onclick="goodStar()">🌟</span>
-        <span onclick="wrongStar()">⭐</span>
-        <span onclick="wrongStar()">⭐</span>
+</p>
 
-    </div>
+<div class="star-grid">
+
+<span onclick="wrongStar()">⭐</span>
+
+<span onclick="wrongStar()">⭐</span>
+
+<span onclick="wrongStar()">⭐</span>
+
+<span onclick="goodStar()">🌟</span>
+
+<span onclick="wrongStar()">⭐</span>
+
+<span onclick="wrongStar()">⭐</span>
+
+</div>
 
 </section>
 
-<!-- CARTAS -->
+<!-- ================= CARTAS ================= -->
+
 <section id="cartas" class="screen">
 
-    <h2>💌 Cartas Secretas</h2>
+<h2>💌 Cartas Secretas</h2>
 
-    <div class="letter" onclick="openLetter(this)">
-        Lo que admiro de ti
-        <div class="content">
-            Tu forma de iluminar cada momento.
-        </div>
-    </div>
+<div class="letter" onclick="openLetter(this)">
 
-    <div class="letter" onclick="openLetter(this)">
-        Gracias por...
-        <div class="content">
-            Estar siempre cuando te necesito.
-        </div>
-    </div>
+🌻 Lo que admiro de ti
 
-    <div class="letter" onclick="openLetter(this)">
-        Nunca olvidaré...
-        <div class="content">
-            Todas las risas que hemos compartido.
-        </div>
-    </div>
+<div class="content">
 
-    <button onclick="nextStep('final')">
-        Abrir sorpresa 🎁
-    </button>
+Tu forma de iluminar cada momento.
+
+Tu alegría.
+
+Tu autenticidad.
+
+Y la manera en que haces especiales incluso los días más simples.
+
+</div>
+
+</div>
+
+<div class="letter" onclick="openLetter(this)">
+
+⭐ Gracias por...
+
+<div class="content">
+
+Gracias por las conversaciones.
+
+Por las risas.
+
+Y por todos los recuerdos que hemos compartido.
+
+</div>
+
+</div>
+
+<div class="letter" onclick="openLetter(this)">
+
+✨ Nunca olvidaré...
+
+<div class="content">
+
+Todos esos momentos que terminan convirtiéndose en historias.
+
+Porque los mejores recuerdos suelen aparecer cuando menos se esperan.
+
+</div>
+
+</div>
+
+<button onclick="nextStep('final')">
+
+🎁 Abrir Sorpresa
+
+</button>
 
 </section>
 
-<!-- FINAL -->
+<!-- ================= FINAL ================= -->
+
 <section id="final" class="screen">
 
-    <h1>🌟 Gracias 🌟</h1>
+<div class="final-box">
 
-    <p class="final-text">
+<h1>⭐ Para Mi Estrellita ⭐</h1>
 
-        Gracias por las risas.
+<p class="final-text">
 
-        <br><br>
+Gracias por cada sonrisa.
 
-        Gracias por los recuerdos.
+<br><br>
 
-        <br><br>
+Gracias por cada recuerdo.
 
-        Gracias por ser tú.
+<br><br>
 
-        <br><br>
+Gracias por cada conversación.
 
-        No importa cuántas estrellas existan en el cielo...
+<br><br>
 
-        <br><br>
+No todas las personas dejan huellas bonitas.
 
-        Siempre tendrás un brillo especial para mí.
+Pero tú sí.
 
-        <br><br>
+<br><br>
 
-        ⭐ Mi Estrellita ⭐
+Y aunque esta página tenga estrellas...
 
-    </p>
+La estrella más bonita siempre serás tú.
+
+<br><br>
+
+🌻✨⭐
+
+</p>
+
+</div>
 
 </section>
+
+<!-- LIGHTBOX FOTOS -->
+
+<div id="lightbox">
+
+<span id="closeLightbox">
+✖
+</span>
+
+<img id="lightboxImg">
+
+</div>
 
 <script src="script.js"></script>
 
 </body>
+
 </html>
