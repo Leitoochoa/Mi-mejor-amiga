@@ -37,7 +37,8 @@ var(--night3) 100%
 
 color:white;
 
-overflow:hidden;
+    overflow-x:hidden;
+    overflow-y:auto;
 
 position:relative;
 
