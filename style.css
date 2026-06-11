@@ -5,106 +5,634 @@ box-sizing:border-box;
 font-family:'Poppins',sans-serif;
 }
 
-body{
-background:#07111f;
-color:white;
-min-height:100vh;
-overflow:hidden;
+:root{
+
+--night:#081120;
+--night2:#13213b;
+--night3:#1f2f55;
+
+--gold:#ffd166;
+--sunflower:#ffb703;
+--cream:#fff8e7;
+
+--glass:rgba(255,255,255,.08);
+
 }
+
+html{
+height:100%;
+}
+
+body{
+
+min-height:100vh;
+
+background:
+linear-gradient(
+180deg,
+var(--night) 0%,
+var(--night2) 45%,
+var(--night3) 100%
+);
+
+color:white;
+
+overflow:hidden;
+
+position:relative;
+
+}
+
+/* =======================
+FONDO ESTRELLAS
+======================= */
 
 .stars{
+
 position:fixed;
+
 top:0;
 left:0;
+
 width:100%;
 height:100%;
+
+z-index:-2;
+
 pointer-events:none;
-z-index:-1;
+
 background:
-radial-gradient(circle, white 1px, transparent 1px);
+radial-gradient(circle, rgba(255,255,255,.9) 1px, transparent 1px);
+
 background-size:40px 40px;
-opacity:.3;
+
+opacity:.25;
+
 }
 
-.screen{
-display:none;
+/* =======================
+ESTRELLAS CAYENDO
+======================= */
+
+#star-container{
+
+position:fixed;
+
+top:0;
+left:0;
+
 width:100%;
+height:100%;
+
+pointer-events:none;
+
+z-index:-1;
+
+}
+
+.star-fall{
+
+position:fixed;
+
+top:-20px;
+
+font-size:18px;
+
+pointer-events:none;
+
+animation:fall linear forwards;
+
+}
+
+@keyframes fall{
+
+0%{
+
+transform:
+translateY(-10vh);
+
+opacity:1;
+
+}
+
+100%{
+
+transform:
+translateY(110vh);
+
+opacity:0;
+
+}
+
+}
+
+/* =======================
+GIRASOLES
+======================= */
+
+.sunflower{
+
+position:fixed;
+
+font-size:65px;
+
+z-index:5;
+
+animation:floatSunflower 4s ease-in-out infinite;
+
+user-select:none;
+
+}
+
+.sunflower.left{
+
+left:15px;
+bottom:15px;
+
+}
+
+.sunflower.right{
+
+right:15px;
+top:15px;
+
+}
+
+@keyframes floatSunflower{
+
+0%,100%{
+
+transform:
+translateY(0);
+
+}
+
+50%{
+
+transform:
+translateY(-15px);
+
+}
+
+}
+
+/* =======================
+PUNTAJE
+======================= */
+
+#score{
+
+position:fixed;
+
+top:15px;
+
+left:50%;
+
+transform:translateX(-50%);
+
+background:rgba(0,0,0,.25);
+
+backdrop-filter:blur(10px);
+
+padding:10px 18px;
+
+border-radius:30px;
+
+font-weight:600;
+
+font-size:14px;
+
+z-index:20;
+
+}
+
+/* =======================
+PANTALLAS
+======================= */
+
+.screen{
+
+display:none;
+
+width:100%;
+
 height:100vh;
-padding:30px;
+
+padding:25px;
+
 justify-content:center;
+
 align-items:center;
+
 flex-direction:column;
+
 text-align:center;
+
+overflow-y:auto;
+
 }
 
 .active{
+
 display:flex;
+
+animation:fade .8s ease;
+
 }
 
+@keyframes fade{
+
+from{
+
+opacity:0;
+transform:translateY(25px);
+
+}
+
+to{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+}
+
+/* =======================
+TEXTOS
+======================= */
+
 h1{
-font-size:3rem;
+
+font-size:2.8rem;
+
 margin-bottom:20px;
+
+line-height:1.2;
+
 }
 
 h2{
+
+font-size:2rem;
+
 margin-bottom:20px;
+
 }
+
+p{
+
+line-height:1.8;
+
+}
+
+.hero-text{
+
+max-width:500px;
+
+}
+
+/* =======================
+CAJAS
+======================= */
+
+.hero-box,
+.card,
+.final-box{
+
+background:var(--glass);
+
+backdrop-filter:blur(15px);
+
+border:1px solid rgba(255,255,255,.15);
+
+box-shadow:
+0 15px 40px rgba(0,0,0,.3);
+
+padding:30px;
+
+border-radius:30px;
+
+max-width:700px;
+
+}
+
+/* =======================
+BOTONES
+======================= */
 
 button{
+
 padding:15px 30px;
+
+margin-top:25px;
+
 border:none;
-border-radius:30px;
+
+border-radius:40px;
+
 cursor:pointer;
-font-size:18px;
-margin-top:20px;
-background:white;
-color:#07111f;
-font-weight:bold;
+
+font-size:17px;
+
+font-weight:600;
+
+background:linear-gradient(
+135deg,
+var(--gold),
+var(--sunflower)
+);
+
+color:#1a1a1a;
+
+transition:.3s;
+
 }
 
-.card{
-background:#10233e;
-padding:30px;
-border-radius:20px;
-max-width:700px;
+button:hover{
+
+transform:translateY(-3px);
+
+box-shadow:
+0 0 20px rgba(255,209,102,.5);
+
 }
+
+button:active{
+
+transform:scale(.97);
+
+}
+
+/* =======================
+GALERÍA
+======================= */
 
 .gallery{
+
 display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:15px;
-margin-top:20px;
+
+grid-template-columns:1fr;
+
+gap:20px;
+
+width:100%;
+
+max-width:900px;
+
+padding-bottom:20px;
+
 }
 
-.gallery img{
-width:170px;
-height:170px;
-object-fit:cover;
-border-radius:15px;
-cursor:pointer;
+.photo-card{
+
+background:var(--glass);
+
+backdrop-filter:blur(12px);
+
+border-radius:25px;
+
+overflow:hidden;
+
+border:1px solid rgba(255,255,255,.1);
+
+box-shadow:
+0 10px 30px rgba(0,0,0,.3);
+
+transition:.4s;
+
 }
+
+.photo-card:hover{
+
+transform:translateY(-5px);
+
+}
+
+.photo-card img{
+
+width:100%;
+
+height:280px;
+
+object-fit:cover;
+
+cursor:pointer;
+
+display:block;
+
+}
+
+.photo-card p{
+
+padding:15px;
+
+font-size:14px;
+
+color:var(--cream);
+
+}
+
+/* =======================
+QUIZ
+======================= */
+
+.quiz-buttons{
+
+display:flex;
+
+flex-direction:column;
+
+gap:12px;
+
+margin-top:20px;
+
+}
+
+#respuesta{
+
+margin-top:15px;
+
+font-weight:600;
+
+font-size:18px;
+
+color:var(--gold);
+
+}
+
+/* =======================
+ESTRELLAS DEL JUEGO
+======================= */
 
 .star-grid{
-display:flex;
-gap:20px;
-font-size:60px;
-margin-top:20px;
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:25px;
+
+margin-top:30px;
+
 }
 
 .star-grid span{
+
+font-size:60px;
+
 cursor:pointer;
+
+transition:.3s;
+
 }
 
+.star-grid span:hover{
+
+transform:scale(1.2);
+
+}
+
+/* =======================
+CARTAS
+======================= */
+
 .letter{
-background:#10233e;
+
+background:var(--glass);
+
+backdrop-filter:blur(12px);
+
+border:1px solid rgba(255,255,255,.12);
+
+border-radius:20px;
+
 padding:20px;
-margin:10px;
-border-radius:15px;
+
+margin:10px 0;
+
+width:100%;
+
+max-width:400px;
+
 cursor:pointer;
-width:300px;
+
+transition:.3s;
+
+}
+
+.letter:hover{
+
+transform:translateY(-3px);
+
 }
 
 .content{
+
 display:none;
+
 margin-top:15px;
+
+line-height:1.8;
+
+color:var(--cream);
+
+}
+
+/* =======================
+FINAL
+======================= */
+
+.final-text{
+
+font-size:18px;
+
+line-height:2;
+
+}
+
+/* =======================
+LIGHTBOX
+======================= */
+
+#lightbox{
+
+display:none;
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+background:rgba(0,0,0,.9);
+
+justify-content:center;
+
+align-items:center;
+
+z-index:999;
+
+padding:20px;
+
+}
+
+#lightboxImg{
+
+max-width:95%;
+
+max-height:85vh;
+
+border-radius:20px;
+
+box-shadow:
+0 0 30px rgba(255,209,102,.4);
+
+}
+
+#closeLightbox{
+
+position:absolute;
+
+top:20px;
+right:25px;
+
+font-size:35px;
+
+cursor:pointer;
+
+}
+
+/* =======================
+TABLET Y PC
+======================= */
+
+@media(min-width:768px){
+
+.gallery{
+
+grid-template-columns:
+repeat(2,1fr);
+
+}
+
+.photo-card img{
+
+height:320px;
+
+}
+
+}
+
+@media(min-width:1100px){
+
+.gallery{
+
+grid-template-columns:
+repeat(3,1fr);
+
+}
+
 }
