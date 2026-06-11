@@ -95,7 +95,7 @@ function goodStar(){
 
     createCelebration();
 
-    alert("🌟 ¡Te encontré, mi estrellita!");
+    alert("🌟 Yei, esa es la correcta, asi de especial y unica como tu💕✨ ");
 
     setTimeout(()=>{
 
@@ -204,7 +204,7 @@ function createStar(){
     star.className = "star-fall";
 
     star.innerHTML =
-    Math.random() > 0.5 ? "⭐" : "✨";
+    Math.random() > 0.5 ? "⭐" : "✨": "🌻";
 
     star.style.left =
     Math.random()*100 + "vw";
@@ -247,7 +247,7 @@ function createCelebration(){
         document.createElement("div");
 
         sparkle.innerHTML =
-        Math.random() > 0.5 ? "✨" : "⭐";
+        Math.random() > 0.5 ? "✨" : "⭐" : "🌻";
 
         sparkle.style.position = "fixed";
 
@@ -322,8 +322,8 @@ Como recompensa:
 
 🌻 Te ganaste un girasol eterno.
 ⭐ Un lugar reservado entre mis estrellas favoritas.
-💛 Y un enorme gracias por ser tú.
-
+💛 Un enorme gracias por ser tú.
+🍨 Y un enorme helado el dia que nos veamos.
 Con cariño,
 Tu compañero de aventuras ✨`
         );
@@ -405,7 +405,7 @@ Y quiero que sepas algo:
 
 No importa cuántas estrellas existan en el cielo.
 
-Siempre habrá una que destaque.
+Siempre habrá una que destaque
 
 Y para mí...
 
