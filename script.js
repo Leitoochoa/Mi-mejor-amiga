@@ -8,7 +8,12 @@ function addStar(points = 1){
 
     starsCollected += points;
 
-    const counter = document.getElementById("starCount");
+    if(starsCollected > 10){
+        starsCollected = 10;
+    }
+
+    const counter =
+    document.getElementById("starCount");
 
     if(counter){
         counter.textContent = starsCollected;
